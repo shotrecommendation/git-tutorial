@@ -1,5 +1,6 @@
 from invoke import task
-
+import sys
+name = sys.argv[1]
 @task
-def build(c):
-	print("Building!")
+def build(c, name=""):
+	c.run(f"python3 lib/hello.py {name}")
